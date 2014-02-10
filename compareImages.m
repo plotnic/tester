@@ -16,7 +16,7 @@ function [ result ] = compareImages(queryFileStruct, candidatFileStruct, compara
   end  
   cropedCandidatFileMatrix  = candidatFileStruct.imgMatrix(1:queryFileStruct.imgHeight, 1:queryFileStruct.imgWidth, :);
   
-  res = comparator(queryFileStruct.imgMatrix, cropedCandidatFileMatrix);
+  res = comparator(double(queryFileStruct.imgMatrix), double(cropedCandidatFileMatrix));
   
   result = res;
 
